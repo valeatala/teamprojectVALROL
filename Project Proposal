@@ -1,0 +1,37 @@
+# **Project Proposal**
+
+## **The Big Idea**
+
+As college students, we struggle with finding new dishes and recipes to make. We are normally stuck preparing the same meals every week. This is where we came up with the idea to create a website where users input an ingredient, and many recipes using that ingredient will appear. This will allow for creativity and testing out new recipes! 
+We will use Flask to create the website, as well as using an API (Spoonacular API) to fetch recipes using specific ingredients.
+Our MVP will be that users enter an ingredient of their choice and a list of recipes containing that ingredient will be the output. 
+Our stretch goal is to allow for more than one ingredient to be in the input, creating a more specific list of recipes. Another goal might be including some filters for those who have dietary restrictions, or just don’t like some ingredients that might be included in the recipes. 
+Furthermore, we decided to look into the possibility of incorporating OpenAI’s API keys. These keys will allow us to offer users and interact with gen AI. Users will be able to include queries, and from them get outputs generated through the API. This feature will make the program more interactive, rather than only displaying recipes from the Spoonacular API. An example for a query the user might write is “Give me an idea of some Thanksgiving style desserts.”
+
+## **Learning Objectives**
+
+We both want to share work equally and work together on the whole project. We want to learn from each other, since Valentina is better at developing the actual code, and Rafa is better using Flask. So we will help and teach others in the areas we are stronger in, this way we both learn and add value to the project. Regarding the usage of the OpenAI API keys, one of our goals is to learn how to use them and implement them, to further understand the example that we looked at in class when we did a similar exercise using these API keys.
+
+## **Implementation Plan**
+
+As mentioned before, we are planning on using Spoonacular API, which is a database with many recipes and meal plans. This API was recommended by ChatGPT, since we were stuck on what API would have this information. We will continue using Flask like how we are now, and developing a well performing website. 
+
+## **Project Schedule**
+
+**Week 1:** Set goals and tasks. Start creating the initial code for the website.
+**Week 2:** Research and test recipe APIs. Begin creating the ingredient input form.
+**Week 3:** Add more to the website and test out output. 
+**Week 4:** Test our creation. Add stretch goals. 
+**Week 5:**  Make it visually prettier, add any final details, complete the project. 
+
+## **Collaboration Plan**
+
+We will meet two times a week to work on it together. As mentioned before, we both have our own strengths and weaknesses, and will help each other out on this. We will work on it equally, we have found this works well for both of us. Every meeting will be in person to be more efficient. We will dedicate 2 to 3 hours a day , two to three times a week to meet our timeline and get this done. 
+
+## **Risks and Limitation**
+
+Some risks and limitations might be not being able to incorporate all the stretch goals that we are intending to add. Also, because this is a new API we are working with, it might be tricky to manage how to use it. 
+
+## **Additional Course Content**
+
+Knowing how to use Flask a bit more and all the cool features that we could add to a website to make it more professional and visually appealing. 
