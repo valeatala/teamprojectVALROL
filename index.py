@@ -21,6 +21,7 @@ def index():
     recipe_instructions = None
     recipe_link = None
     restrictions = []
+    data = []
 
     if request.method == "POST":
         query = request.form ['recipe_name']
@@ -39,9 +40,6 @@ def index():
             restrictions.append ('eggFree')
         if 'wheatFree' in request.form:
             restrictions.append ('wheatFree')
-
-        print (f"{query}")
-        print (f"{restrictions}")
 
         # This creates the parameters for the API request, including the dietary restrictions
         params = {
