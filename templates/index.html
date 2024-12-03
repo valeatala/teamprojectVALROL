@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Recipe Recommender</title>
+    <style>
+        body {
+            font-family: Ariel, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-color: #5c6bc0;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px; 
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0,1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-size: 1.1em;
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid#add; 
+        }
+        textarea {
+            height: 100px;
+        }
+        .checkbox-group label {
+            font-size: 1em;
+            display: inline-block;
+            margin-right: 15px
+        }
+        button {
+            background-color: #5c6bc0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer; 
+            font-size: 1.2em;
+            display: block;
+            margin: auto;
+        }
+        button.hover {
+            background-color: #3949ab;
+        }
+        .food-restrictions {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleRestrictions() {
+            const restrictionsSection = 
+document.getElementById('food-restrictions');
+            const restrictionsRadioYes = 
+document.getElementById('restrictions-yes');
+            if (restrictionsRadioYes.checked) {
+                restrictionsSection.style.display = 'block';
+            } else {
+                restrictionsSelection.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body> 
+    <header>
+        <h1>Recipe Recommedner</h1>
+    </header>
+    <div class="container">
+        <h2>What would you like to prepare</h2>
+        <form action="#" method="post">
+            <label for="meal">Enter recipe name</label>
+            <input type="text" id="recipe_name" name="recipe_name" placeholder="Meal" required>
+
+            <label for="restrictions">Do you have any dietary restrictions?</label>
+            <label>
+                <input type="radio" id="restrictions-yes" name="restrictions-option" value="yes" onclick="toggleRestrictions()"> Yes
+            </label>
+            <label>
+                <input type="radio" id="restrictions-no" name="restrictions-option" value="no" onclick="toggleRestrictions()" checked> No
+            </label>
+
+            <div id="food-restrictions" class="food-restrictions"
+                <label>Food Restrictions:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="vegetarian"> Vegetarian</label><br>
+                    <label><input type="checkbox" name="vegan"> Vegan</label><br>
+                    <label><input type="checkbox" name="glutenFree"> Gluten-Free</label><br>
+                    <label><input type="checkbox" name="dairyFree"> Dairy-Free</label><br>
+                    <label><input type="checkbox" name="nutFree"> Nut-Free</label><br>
+                    <label><input type="checkbox" name="eggFree"> Egg-Free</label><br>
+                    <label><input type="checkbox" name="wheatFree"> Wheat-Free</label><br>
+                </div>
+            </div>
+
+            <button type="submit">Get Recipe Recommendation</button>
+        </form>
+        {% if recipe%}
+                <h2>Recipe: {{ recipe }}</h2>
+                {% if recipe_image %}
+                    <img src="{{ recipe_image }}" alt="Recipe image" style="max-width: 400px;">
+                {% endif %}
+                {% if recipe_instructions %}
+                    <h3>Instructions:</h3>
+                    <p>{{ recipe_instructions }}</p>
+                {% endif %}
+                {% if recipe_link %}
+                    <p><a href="{{ recipe_link }}" target="_blank">View Full Recipe</a></p>
+                {% endif %}
+        {% endif %} 
+        <br> 
+        <h3>AI Opinion: </h3>
+        <textarea readonly>{{ aiopinion }}</textarea>
+    </div>
+</body>
+</html>
